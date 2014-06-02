@@ -1,9 +1,9 @@
 # Site settings
 title: Rodolfo Gutiérrez
 email: rodolf.gutierrez@gmail.com
-description: "This is my new website. I am incrementally building off current template features and enhancing my web programming abilities in the /process."
-baseurl: ""
-url: "http://rodolfogutierrez.com"
+description: "This is my new website. I am incrementally building off this Jekyll template and enhancing my web programming abilities in the process."
+baseurl: "http://rodolfogutierrez.com"
+url: "http://rodolf.github.io"
 
 # Build settings
 markdown: kramdown
