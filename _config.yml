@@ -2,8 +2,8 @@
 title: Rodolfo Gutiérrez
 email: rodolf.gutierrez@gmail.com
 description: "This is my new website. I am incrementally building off this Jekyll template and enhancing my web programming abilities in the process."
-baseurl: "http://rodolfogutierrez.com"
-url: "http://rodolf.github.io"
+baseurl: "http://rodolf.github.io"
+url: "http://rodolfogutierrez.com"
 
 # Build settings
 markdown: kramdown
