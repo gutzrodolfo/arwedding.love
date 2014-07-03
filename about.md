@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I am a recent B.S. Computer Engineering graduate from California State University, San Bernardino. My concentration is in high performance and embedded systems.
+I am a recent Computer Engineering graduate from California State University, San Bernardino. My concentration is in high performance and embedded systems.
 
 My primary interests within the scope of my technical background are in software development, feedback control systems and the design and implementation of finite state machines, however, I am passionate about any creative application of specialized scientific and mathematical knowledge. 
 
