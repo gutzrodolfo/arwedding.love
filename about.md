@@ -4,8 +4,8 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+I am a recent B.S. Computer Engineering graduate from California State University, San Bernardino. My concentration is in high performance and embedded systems.
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+My primary interests within the scope of my technical background are in software development, feedback control systems and the design and implementation of finite state machines, however, I am passionate about any creative application of specialized scientific and mathematical knowledge. 
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+Some of my most rewarding learning experiences have come through collaborative projects. I look forward to a career in a team environment with like-minded individuals who share my level of interest for solving problems.
