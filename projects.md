@@ -17,5 +17,5 @@ ISA appears to simply be an engineering design preference aimed at achieving dif
 
 <h2> SDL Implementation on iOS and OSX </h2>
 
-During the spring 2014 quarter, I worked extensively with professor Dr. David Turner on the implementation and packaging for release of cross-platform games, which use the [Simple Direct Medial Layer]({{https://www.libsdl.org}}) library. 
+During the spring 2014 quarter, I worked extensively with professor Dr. David Turner on the implementation and packaging for release of cross-platform games, which use the [Simple Direct Medial Layer]({{site.sdl}) library. 
 
