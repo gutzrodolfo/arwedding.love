@@ -19,5 +19,5 @@ ISA appears to simply be an engineering design preference aimed at achieving dif
 
 During the spring 2014 quarter, I worked extensively with professor Dr. David Turner on the implementation and packaging for release of cross-platform games, which use the Simple Direct Medial Layer library. 
 
-My specific role in the project was to build and package and the necessary libraries and frameworks required for proper functionality on iOS and OS X platforms. 
+My specific role in the project was to build and package the necessary libraries and frameworks required for the application to run properly on iOS and OS X platforms. 
 
