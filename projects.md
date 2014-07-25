@@ -17,7 +17,7 @@ ISA appears to simply be an engineering design preference aimed at achieving dif
 
 <h2> SDL Implementation on iOS and OSX </h2>
 
-During the spring 2014 quarter, I worked extensively with professor Dr. David Turner on the implementation and packaging for release of cross-platform games, which use the Simple Direct Medial Layer library. 
+During the spring 2014 quarter, I worked extensively with one of my professors on the implementation and packaging for release of cross-platform games, which use the Simple Direct Medial Layer library. 
 
-My specific role in the project was to build and package the necessary libraries and frameworks required for the application to run properly on iOS and OS X platforms. 
+My specific role in the project was to implement an effective method to build and package the necessary game assets, as well as libraries and frameworks required for the game to run smoothly on iOS and OS X platforms. I accomplished most of this by command line, however, I found a useful feature in Xcode which allows developers to create a run script which will package the apps' dynamically linked libraries. 
 
