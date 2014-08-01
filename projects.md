@@ -8,7 +8,7 @@ This page will be updated periodically with projects I've worked on independentl
 
 <h2> RISC vs. CISC </h2>
 
-During the fall 2013 quarter, I worked collabratively with a professor within the School of Computer Science & Engineering at my university to study the effects of RISC and CISC instruction set architures on the energy consumption of contemporary mobile micro-processors. 
+During the fall 2013 quarter, I worked collaboratively with a professor within the School of Computer Science & Engineering at my university to study the effects of RISC and CISC instruction set architectures on the energy consumption of contemporary mobile micro-processors. 
 
 Conclusion: Neither instruction set architecture is inherently more or less energy efficient. The significance of the
 ISA appears to simply be an engineering design preference aimed at achieving different levels of performance. Significant energy consumption differences between RISC & CISC ISAs are attributed to microarchitecture differences.  
