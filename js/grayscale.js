@@ -47,7 +47,7 @@ function init() {
         zoom: 15,
 
         // The latitude and longitude to center the map (always required)
-        center: new google.maps.LatLng(21.4119, 103.1176) // Juchipila, Zac.
+        center: new google.maps.LatLng(21.4119, 103.1176), // Juchipila, Zac.
 
         // Disables the default Google Maps UI components
         disableDefaultUI: true,
