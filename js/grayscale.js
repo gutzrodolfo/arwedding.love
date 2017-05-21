@@ -53,10 +53,11 @@ function init() {
         disableDefaultUI: true,
         scrollwheel: false,
         draggable: false,
+        animation: google.maps.Animation.DROP,
 
         // How you would like to style the map. 
         // This is where you would paste any style found on Snazzy Maps.
-        styles: [{
+       /* styles: [{
             "featureType": "water",
             "elementType": "geometry",
             "stylers": [{
@@ -163,7 +164,7 @@ function init() {
             }, {
                 "weight": 1.2
             }]
-        }]
+        }]*/
     };
 
     // Get the HTML DOM element that will contain your map 
@@ -174,7 +175,7 @@ function init() {
     var map = new google.maps.Map(mapElement, mapOptions);
 
     // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
-    var image = 'img/map-marker.png';
+    var image = 'img/wedding_marker.png';
     var myLatLng = new google.maps.LatLng(21.4072,-103.1242);
     var beachMarker = new google.maps.Marker({
         position: myLatLng,
