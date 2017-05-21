@@ -47,7 +47,7 @@ function init() {
         zoom: 15,
 
         // The latitude and longitude to center the map (always required)
-        center: new google.maps.LatLng(21.4119, 103.1176), // Juchipila, Zac.
+        center: new google.maps.LatLng(21.4072619,-103.1242014), // Juchipila, Zac.
 
         // Disables the default Google Maps UI components
         disableDefaultUI: true,
@@ -175,7 +175,7 @@ function init() {
 
     // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
     var image = 'img/map-marker.png';
-    var myLatLng = new google.maps.LatLng(21.4119, 103.1176);
+    var myLatLng = new google.maps.LatLng(21.4072619,-103.1242014);
     var beachMarker = new google.maps.Marker({
         position: myLatLng,
         map: map,
