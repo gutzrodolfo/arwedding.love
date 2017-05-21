@@ -50,7 +50,7 @@ function init() {
         center: new google.maps.LatLng(21.411912, -103.11755), // Juchipila, Zac.
 
         // Disables the default Google Maps UI components
-        disableDefaultUI: true,
+        disableDefaultUI: false,
         scrollwheel: false,
         draggable: false,
         animation: google.maps.Animation.DROP,
