@@ -182,4 +182,7 @@ function init() {
         map: map,
         icon: image
     });
+
+    //slick carousel initialize (single item)
+    $('.single-item').slick();
 }
