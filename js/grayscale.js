@@ -35,10 +35,6 @@ $("a").mouseup(function(){
     $(this).blur();
 })
 
-// Google Maps Scripts
-// When the window has finished loading create our google map below
-google.maps.event.addDomListener(window, 'onload', init);
-
 function init() {
     // Basic options for a simple Google Map
     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
@@ -182,6 +178,10 @@ function init() {
         map: map,
         icon: image
     });
+
+    // Google Maps Scripts
+    // When the window has finished loading create our google map below
+    google.maps.event.addDomListener(window, 'load', init);
 
     //slick carousel initialize (single item)
     $('.single-item').slick();
