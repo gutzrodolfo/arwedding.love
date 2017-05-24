@@ -341,7 +341,7 @@ footer {
 
 footer p {
     margin: 0;
-    color: #219ab3; 
+    color: #b8ede1; 
 }
 
 ::-moz-selection {
@@ -369,5 +369,5 @@ body {
 }
 
 #contact, #about {
-    color: #219ab3; 
+    color: #b8ede1; 
 }
