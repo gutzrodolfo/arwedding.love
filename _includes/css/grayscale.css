@@ -368,5 +368,5 @@ body {
 }
 
 #contact {
-    h1 { color: {{ site.color.links }}; }
+    color: #219ab3; 
 }
