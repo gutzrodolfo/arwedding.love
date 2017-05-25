@@ -184,5 +184,5 @@ function init() {
     });
 
     //slick carousel initialize (single item)
-    $('.single-item').slick({ arrows: true;});
+    $('.single-item').slick();
 }

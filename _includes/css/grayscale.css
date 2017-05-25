@@ -377,3 +377,11 @@ body {
     display: block;
     margin: 0 auto;
 }
+
+.slick-prev:before, .slick-next:before {
+    font-family: "Glyphicons Halflings", "slick", sans-serif;
+    font-size: 40px;
+}
+
+.slick-prev:before { content: "\e257"; }
+.slick-next:before { content: "\e258"; }
