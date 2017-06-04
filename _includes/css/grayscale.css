@@ -129,6 +129,15 @@ a:focus {
     .navbar-custom.top-nav-collapse {
         border-bottom: 1px solid rgba(255,255,255,.3);
     }
+
+    #header {
+        font-size: 13px;
+    }
+
+     .img-circle {
+        height: 170px;
+        width: 170px;
+    }
 }
 
 .intro {
@@ -273,7 +282,7 @@ a:focus {
 
 @media(min-width:767px) {
     .content-section {
-        padding-top: 200px;
+        padding-top: 50px;
     }
 
     .download-section {
@@ -376,6 +385,8 @@ body {
     border-radius: 50%;
     display: block;
     margin: 0 auto;
+    height: 202px;
+    width: 202px;
 }
 
 .slick-prev:before, .slick-next:before {
