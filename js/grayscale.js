@@ -398,7 +398,8 @@ function init() {
     var beachMarker = new google.maps.Marker({
         position: myLatLng,
         map: map,
-        icon: image
+        icon: image,
+        animation: google.maps.Animation.DROP
     });
 
     //slick carousel initialize (single item)
