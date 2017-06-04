@@ -399,8 +399,8 @@ body {
   -webkit-border-radius: 99em;
   -moz-border-radius: 99em;
   border-radius: 99em;
-  border: 5px solid grey;
-  box-shadow: 0 3px 2px whitesmoke;  
+  border: 2px solid whitesmoke;
+  /*box-shadow: 0 3px 2px whitesmoke;  */
 }
 
 .slick-prev:before, .slick-next:before {
