@@ -336,12 +336,16 @@ ul.banner-social-buttons li {
     }
 
      #header {
-        font-size: 13px;
+        font-size: 18px;
     }
 
      img {
         max-height: 170px;
         max-width: 170px;
+    }
+
+    p {
+        font-size: 14px;
     }
 }
 
