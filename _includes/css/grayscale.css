@@ -274,7 +274,7 @@ a:focus {
 
 @media(min-width:767px) {
     .content-section {
-        padding-top: 50px;
+        padding-top: 100px;
     }
 
     .download-section {
@@ -283,7 +283,7 @@ a:focus {
 
     #map {
         height: 400px;
-        margin-top: 250px;
+        margin-top: 75px;
     }
 }
 
@@ -350,7 +350,7 @@ ul.banner-social-buttons li {
 }
 
 footer {
-    padding: 50px 0
+    padding: 25px 0
 }
 
 footer p {
