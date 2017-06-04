@@ -134,9 +134,9 @@ a:focus {
         font-size: 13px;
     }
 
-     .img-circle {
-        height: 170px;
-        width: 170px;
+     .img-circle img {
+        max-height: 170px;
+        max-width: 170px;
     }
 }
 
