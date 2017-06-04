@@ -129,16 +129,8 @@ a:focus {
     .navbar-custom.top-nav-collapse {
         border-bottom: 1px solid rgba(255,255,255,.3);
     }
-
-    #header {
-        font-size: 13px;
-    }
-
-     .img-circle img {
-        max-height: 170px;
-        max-width: 170px;
-    }
 }
+
 
 .intro {
     display: table;
@@ -341,6 +333,15 @@ ul.banner-social-buttons li {
 
     ul.banner-social-buttons li:last-child {
         margin-bottom: 0;
+    }
+
+     #header {
+        font-size: 13px;
+    }
+
+     img {
+        max-height: 170px;
+        max-width: 170px;
     }
 }
 
