@@ -405,7 +405,7 @@ body {
 }
 
 .fa-heart {
-  background: url("/img/placita.jpg");
+  background: yellow;
   border-radius: 50%;
   height: 18px;
   width: 18px;
