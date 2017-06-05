@@ -405,8 +405,7 @@ body {
 }
 
 .fa-heart {
-  background: yellow;
-  border-radius: 50%;
+  color: yellow;
   height: 18px;
   width: 18px;
 }
