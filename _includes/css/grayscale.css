@@ -347,6 +347,11 @@ ul.banner-social-buttons li {
     p {
         font-size: 14px;
     }
+
+    .heart-shape div {
+        max-height: 170px;
+        max-width: 170px;
+    }
 }
 
 footer {
