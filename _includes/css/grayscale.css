@@ -266,6 +266,16 @@ a:focus {
     -o-background-size: cover;
 }
 
+.about-section {
+    width: 100%;
+    padding: 50px 0;
+    background: url(/img/placita.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
 #map {
     width: 100%;
     height: 300px;
