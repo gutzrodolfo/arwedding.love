@@ -348,11 +348,6 @@ ul.banner-social-buttons li {
         font-size: 14px;
     }
 
-    .heart-shape, .heart-shape:before,
-.heart-shape:after {
-        max-height: 125px;
-        max-width: 125px;
-    }
 }
 
 footer {
@@ -409,36 +404,11 @@ body {
   /*box-shadow: 0 3px 2px whitesmoke;  */
 }
 
-.heart-shape{
-  position: relative;
-  width: 200px;
-  height: 200px;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-  background-color: rgba(250,184,66, 1);
-}
-.heart-shape:before,
-.heart-shape:after{
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  content: '';
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -o-border-radius: 50%;
+.fa-heart {
+  background: url("img/placita.jpg");
   border-radius: 50%;
-  background-color: rgba(250,184,66, 1);
-}
-.heart-shape:before{
-  bottom: 0px;
-  left: -100px;
-}
-.heart-shape:after{
-  top: -100px;
-  right: 0px;
+  height: 1em;
+  width: 1em;
 }
 
 .slick-prev:before, .slick-next:before {
