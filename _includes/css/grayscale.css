@@ -350,8 +350,8 @@ ul.banner-social-buttons li {
 
     .heart-shape, .heart-shape:before,
 .heart-shape:after {
-        max-height: 160px;
-        max-width: 160px;
+        max-height: 125px;
+        max-width: 125px;
     }
 }
 
