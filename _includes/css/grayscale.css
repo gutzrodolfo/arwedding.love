@@ -405,10 +405,10 @@ body {
 }
 
 .fa-heart {
-  background: url("img/placita.jpg");
+  background: url("/img/placita.jpg");
   border-radius: 50%;
-  height: 1em;
-  width: 1em;
+  height: 18px;
+  width: 18px;
 }
 
 .slick-prev:before, .slick-next:before {
