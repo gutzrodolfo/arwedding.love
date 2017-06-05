@@ -405,7 +405,8 @@ body {
 }
 
 .fa-heart {
-  color: yellow;
+background: url("/img/placita.jpg");
+font-size: 18px;
 }
 
 .slick-prev:before, .slick-next:before {
