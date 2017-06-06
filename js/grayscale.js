@@ -147,7 +147,7 @@ function validateRsvpCode(dbId, inputId) {
     $('#msform #rsvp').val("NOT VALID"); 
     return false;
   }
-  console.log("bool: ", true);
+  console.log("VALID");
   return true;
 }
 
