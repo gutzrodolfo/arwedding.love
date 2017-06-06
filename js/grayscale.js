@@ -65,7 +65,7 @@ ref.once("value")
   });
 
 
-  if (valid != true) {return} else {continue}
+  if (valid != true) {return}
 
   
 
@@ -143,7 +143,7 @@ $(".submit").click(function () {
 
 function validateRsvpCode(dbId, inputId) {
   if (dbId != inputId) {   
-    console.log("NOT VALID!", dbId + " " + inputId);
+    console.log("NOT VALID!");
     $('#msform #rsvp').val("NOT VALID"); 
     return false;
   }
