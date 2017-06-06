@@ -61,19 +61,15 @@ $(".next").click(function () {
 ref.once("value")
   .then(function(snapshot) {
     var value = snapshot.val();
-     validateRsvpCode(value, rsvpDbValue);
-  });
-
-  var rsvpDbValue = getRsvpId();
-  var valid = validateRsvpCode(rsvpDbValue, rsvpInputValue);
-
-  console.log("db val: ", rsvpDbValue);
-
-  if (valid == false) {
+     var valid = validateRsvpCode(value, rsvpDbValue);
+       if (valid == false) {
     console.log("NOT VALID!");
     $('#msform #rsvp').val("NOT VALID"); 
     return;
   }
+  });
+
+
 
   next_fs = $(this).parent().next();
 
