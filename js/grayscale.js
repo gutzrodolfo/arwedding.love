@@ -56,14 +56,14 @@ $(".next").click(function () {
   var rsvpInputValue = $('#msform #rsvp').val();
 
 
-  function getRsvpId() {
+
   var ref = firebase.database().ref("RsvpId");
 ref.once("value")
   .then(function(snapshot) {
     var value = snapshot.val();
-    return snapshot.val();
+     validateRsvpCode(value, rsvpDbValue);
   });
-}
+
   var rsvpDbValue = getRsvpId();
   var valid = validateRsvpCode(rsvpDbValue, rsvpInputValue);
 
