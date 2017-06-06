@@ -63,7 +63,7 @@ ref.once("value")
     var value = snapshot.val();
      var valid = validateRsvpCode(value, rsvpInputValue);
        if (valid == false) {
-    console.log("NOT VALID!");
+    console.log("NOT VALID!", value + " " + rsvpInputValue);
     $('#msform #rsvp').val("NOT VALID"); 
     return;
   }
