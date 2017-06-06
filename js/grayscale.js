@@ -61,7 +61,7 @@ $(".next").click(function () {
 ref.once("value")
   .then(function(snapshot) {
     var value = snapshot.val();
-     var valid = validateRsvpCode(value, rsvpDbValue);
+     var valid = validateRsvpCode(value, rsvpInputValue);
        if (valid == false) {
     console.log("NOT VALID!");
     $('#msform #rsvp').val("NOT VALID"); 
