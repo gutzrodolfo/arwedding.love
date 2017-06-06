@@ -55,16 +55,17 @@ $(".next").click(function () {
   // authenticate 
   var rsvpInputValue = $('#msform #rsvp').val();
 
-
+var valid = false; 
 
   var ref = firebase.database().ref("RsvpId");
 ref.once("value")
   .then(function(snapshot) {
     var value = snapshot.val();
-     validateRsvpCode(value, rsvpInputValue);
+     valid = validateRsvpCode(value, rsvpInputValue);
   });
 
-
+  if (valid == false) {return}
+  
   next_fs = $(this).parent().next();
 
   //activate next step on progressbar using the index of next_fs
@@ -141,8 +142,9 @@ function validateRsvpCode(dbId, inputId) {
   if (dbId !== inputId) {   
     console.log("NOT VALID!");
     $('#msform #rsvp').val("NOT VALID"); 
-    return;
+    return false;
   }
+  return true;
 }
 
 // Google Maps Scripts

@@ -10,11 +10,11 @@
   };
   firebase.initializeApp(config);
 
-function getRsvpId() {
-  var ref = firebase.database().ref("RsvpId");
-ref.once("value")
-  .then(function(snapshot) {
-    var value = snapshot.val();
-    return value;
-  });
-}
+// function getRsvpId() {
+//   var ref = firebase.database().ref("RsvpId");
+// ref.once("value")
+//   .then(function(snapshot) {
+//     var value = snapshot.val();
+//     return value;
+//   });
+// }
