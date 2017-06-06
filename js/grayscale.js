@@ -49,9 +49,9 @@ $(".next").click(function(){
 	if(animating) return false;
 	animating = true;
 	
- var rsvp = document.getElementById("msform");
+ var bla = $('#rsvp').val();
 	current_fs = $(this).parent();
-  console.log("current field set: ", rsvp.getElementById("rsvp").value);
+  console.log("current field set: ", bla);
 
 	next_fs = $(this).parent().next();
 	
