@@ -61,14 +61,8 @@ $(".next").click(function () {
 ref.once("value")
   .then(function(snapshot) {
     var value = snapshot.val();
-     var valid = validateRsvpCode(value, rsvpInputValue);
-       if (valid == false) {
-    console.log("NOT VALID!", value + " " + rsvpInputValue);
-    $('#msform #rsvp').val("NOT VALID"); 
-    return;
-  }
+     validateRsvpCode(value, rsvpInputValue);
   });
-
 
 
   next_fs = $(this).parent().next();
@@ -144,8 +138,11 @@ $(".submit").click(function () {
 })
 
 function validateRsvpCode(dbId, inputId) {
-  if (dbId == inputId) { return true; }
-  return false;
+  if (dbId !== inputId) {   
+    console.log("NOT VALID!");
+    $('#msform #rsvp').val("NOT VALID"); 
+    return;
+  }
 }
 
 // Google Maps Scripts
