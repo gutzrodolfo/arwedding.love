@@ -13,6 +13,7 @@
 var ref = firebase.database().ref("RsvpId");
 ref.once("value")
   .then(function(snapshot) {
-    var key = snapshot.key; // "ada"
-    console.log("Id: ", key);
+    var key = snapshot.key;
+    var value = snapshot.value;
+    console.log("Id: ", value);
   });
