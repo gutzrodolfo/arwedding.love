@@ -54,12 +54,21 @@ $(".next").click(function () {
 
   // authenticate 
   var rsvpInputValue = $('#msform #rsvp').val();
-  var rsvpDbValue = getRsvpId();
 
+
+  function getRsvpId() {
+  var ref = firebase.database().ref("RsvpId");
+ref.once("value")
+  .then(function(snapshot) {
+    var value = snapshot.val();
+    return value;
+  });
+}
+  var rsvpDbValue = getRsvpId();
   var valid = validateRsvpCode(rsvpDbValue, rsvpInputValue);
 
   console.log("db val: ", rsvpDbValue);
-  
+
   if (valid == false) {
     console.log("NOT VALID!");
     $('#msform #rsvp').val("NOT VALID"); 

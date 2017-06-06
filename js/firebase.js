@@ -15,7 +15,6 @@ function getRsvpId() {
 ref.once("value")
   .then(function(snapshot) {
     var value = snapshot.val();
-    console.log("v: ", value);
     return value;
   });
 }
