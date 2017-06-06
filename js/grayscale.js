@@ -65,7 +65,7 @@ ref.once("value")
   });
 
 
-  if (valid == false) {return}
+  if (valid == false) {return} else {break;}
 
   
 
