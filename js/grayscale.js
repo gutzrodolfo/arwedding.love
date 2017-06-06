@@ -49,7 +49,7 @@ $(".next").click(function(){
 	if(animating) return false;
 	animating = true;
 	
- var rsvp = document.getElementById("rsvp").value();
+ var rsvp = document.getElementById("rsvp").value;
 	current_fs = $(this).parent();
   console.log("current field set: ", rsvp);
 
