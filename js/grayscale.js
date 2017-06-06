@@ -52,13 +52,17 @@ $(".next").click(function () {
 
   current_fs = $(this).parent();
 
-// authenticate 
+  // authenticate 
   var rsvpInputValue = $('#msform #rsvp').val();
   var rsvpDbValue = getRsvpId();
 
   var valid = validateRsvpCode(rsvpDbValue, rsvpInputValue);
 
-  if (valid == false) { console.log("NOT VALID!"); return; }
+  if (valid == false) {
+    console.log("NOT VALID!");
+    $('#msform #rsvp').val() = "NOT VALID"
+    return;
+  }
 
   next_fs = $(this).parent().next();
 
