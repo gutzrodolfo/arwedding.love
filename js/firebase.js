@@ -12,4 +12,4 @@
 
 // Get a reference to the database service
 var database = firebase.database();
-console.log("database: ", database.ref("RsvpId"));
+console.log("database: ", database.ref("RsvpId").value());
