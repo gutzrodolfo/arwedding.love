@@ -49,7 +49,7 @@ $(".next").click(function(){
 	if(animating) return false;
 	animating = true;
 	
- var bla = $('#rsvp').val();
+ var bla = $('#msform #rsvp').val();
 	current_fs = $(this).parent();
   console.log("current field set: ", bla);
 
