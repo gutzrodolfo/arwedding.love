@@ -51,7 +51,7 @@ $(".next").click(function(){
 	
  var rsvp = document.getElementById("msform");
 	current_fs = $(this).parent();
-  console.log("current field set: ", rsvp);
+  console.log("current field set: ", rsvp.getElementById("rsvp").value);
 
 	next_fs = $(this).parent().next();
 	
