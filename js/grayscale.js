@@ -60,7 +60,7 @@ $(".next").click(function () {
 
   if (valid == false) {
     console.log("NOT VALID!");
-    $('#msform #rsvp').val() = "NOT VALID"
+    $('#msform #rsvp').val("NOT VALID"); 
     return;
   }
 
