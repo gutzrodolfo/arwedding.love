@@ -65,7 +65,7 @@ ref.once("value")
   });
 
 
-  if (valid != true) {return}
+  if (valid != true) {return} else {continue}
 
   
 
