@@ -61,7 +61,7 @@ $(".next").click(function () {
 ref.once("value")
   .then(function(snapshot) {
     var value = snapshot.val();
-    return value;
+    return snapshot.val();
   });
 }
   var rsvpDbValue = getRsvpId();
