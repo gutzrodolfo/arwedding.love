@@ -50,7 +50,7 @@ $(".next").click(function(){
 	animating = true;
 	
 	current_fs = $(this).parent();
-  consotl.log("current field set: ", current_fs);
+  console.log("current field set: ", current_fs);
 
 	next_fs = $(this).parent().next();
 	
