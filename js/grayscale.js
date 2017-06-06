@@ -65,7 +65,9 @@ ref.once("value")
   });
 
   if (valid == false) {return}
-  
+
+  console.log("valid: ", valid);
+
   next_fs = $(this).parent().next();
 
   //activate next step on progressbar using the index of next_fs
