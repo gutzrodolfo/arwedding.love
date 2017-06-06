@@ -64,9 +64,10 @@ ref.once("value")
      valid = validateRsvpCode(value, rsvpInputValue);
   });
 
+
   if (valid == false) {return}
 
-  console.log("valid: ", valid);
+  
 
   next_fs = $(this).parent().next();
 
@@ -141,8 +142,8 @@ $(".submit").click(function () {
 })
 
 function validateRsvpCode(dbId, inputId) {
-  if (dbId !== inputId) {   
-    console.log("NOT VALID!");
+  if (dbId != inputId) {   
+    console.log("NOT VALID!", dbId + " " + inputId);
     $('#msform #rsvp').val("NOT VALID"); 
     return false;
   }
