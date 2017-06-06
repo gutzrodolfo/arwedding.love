@@ -12,4 +12,4 @@
 
 // Get a reference to the database service
 var database = firebase.database();
-console.log("database: ", database.ref("https://arwedding-31ea4.firebaseio.com/RsvpId"));
+console.log("database: ", database.ref("https://arwedding-31ea4.firebaseio.com"));
