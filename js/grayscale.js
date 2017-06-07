@@ -311,7 +311,7 @@ $(document).on("click", ".next", function () {
   // if (animating) return false;
   // animating = true;
 
-  step = $("input").attr("value");
+  step = $("input").attr("id");
 
   current_fs = $(this).parent();
 
