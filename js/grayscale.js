@@ -405,6 +405,9 @@ $(".submit").click(function () {
 })
 
 function validateRsvpCode(dbId, inputId) {
+  $('#msform #rsvp').removeClass("alert alert-danger");
+  $('#msform #rsvp').removeClass("alert alert-success");
+
   if (dbId != inputId) {
     console.log("NOT VALID!");
     $('#msform #rsvp').val("NOT VALID");
