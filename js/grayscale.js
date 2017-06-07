@@ -306,8 +306,9 @@ var rsvpIdDb;
 var rsvpIdInput;
 var step;
 var valid = true;
+var partySize;
 
-$(document).on("click", ".next", function (even) {
+$(document).on("click", ".next", function (event) {
   // if (animating) return false;
   // animating = true;
 
@@ -334,12 +335,14 @@ $(document).on("click", ".next", function (even) {
       var ref = firebase.database().ref();
       var newStoreRef = ref.push();
       newStoreRef.set({
-        "test1": "abc123"
+        "name": $('#msform #fs2name').val(),
+        "email": $('#msform #fs2email').val(),
+        "partySize": $('#msform #fs2partysize').val()
       });
-      $("#fs2 input").each(function () {
-        console.log("v: ", $(this).val());
-        // $(this).val(); check here what you want.
-      })
+      partySize = $('#msform #fs2partysize').val();
+      break;
+      case "s3":
+      addFields(partySize);
       break;
   }
 
