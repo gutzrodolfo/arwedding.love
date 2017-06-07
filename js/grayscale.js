@@ -307,13 +307,11 @@ var rsvpIdInput;
 var step;
 var valid = true;
 
-$(document).on("click", ".next", function () {
+$(document).on("click", ".next", function (even) {
   // if (animating) return false;
   // animating = true;
 
-   $("input").click(function(event) {
-        step = event.target.id;
-    });
+  step = event.target.id;
 
   console.log("step: ", step);
 
