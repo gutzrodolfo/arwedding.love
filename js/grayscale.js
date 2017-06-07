@@ -317,7 +317,7 @@ $(document).on("click", ".next", function (even) {
 
   current_fs = $(this).parent();
 
-  if (step = "s1") {
+  if (step === "s1") {
     // get rsvp input 
     rsvpIdInput = $('#msform #rsvp').val();
 
