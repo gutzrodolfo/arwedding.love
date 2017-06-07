@@ -312,7 +312,7 @@ $(document).on("click", ".next", function () {
   // animating = true;
 
   step = $("input").attr("id");
-
+  console.log("step: ", step);
   current_fs = $(this).parent();
 
   if (step = "s1") {
