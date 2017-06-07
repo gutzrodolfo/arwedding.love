@@ -401,6 +401,7 @@ function validateRsvpCode(dbId, inputId) {
   if (dbId != inputId) {
     console.log("NOT VALID!");
     $('#msform #rsvp').val("NOT VALID");
+    $('#msform #rsvp').addClass("alert alert-danger");
     return false;
   }
   console.log("VALID")
