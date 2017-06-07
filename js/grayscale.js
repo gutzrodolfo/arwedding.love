@@ -304,23 +304,30 @@ var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
 var rsvpIdDb;
 var rsvpIdInput;
+var step;
+var valid = true;
 
 $(document).on("click", ".next", function () {
- // if (animating) return false;
- // animating = true;
+  // if (animating) return false;
+  // animating = true;
+
+  step = $("input").attr("value");
 
   current_fs = $(this).parent();
 
-  // get rsvp input 
-  rsvpIdInput = $('#msform #rsvp').val();
+  if (step = "s1") {
+    // get rsvp input 
+    rsvpIdInput = $('#msform #rsvp').val();
 
-  var ref = firebase.database().ref("RsvpId");
-  ref.once("value")
-    .then(function (snapshot) {
-      rsvpIdDb = snapshot.val(); // rsvp id from db
-    });
+    var ref = firebase.database().ref("RsvpId");
+    ref.once("value")
+      .then(function (snapshot) {
+        rsvpIdDb = snapshot.val(); // rsvp id from db
+      });
 
-  var valid = validateRsvpCode(rsvpIdDb, rsvpIdInput);
+    valid = validateRsvpCode(rsvpIdDb, rsvpIdInput);
+  }
+
 
   if (valid == true) {
     next_fs = $(this).parent().next();
@@ -406,6 +413,7 @@ function validateRsvpCode(dbId, inputId) {
   }
   console.log("VALID")
   $('#msform #rsvp').val("VALID!");
+  $('#msform #rsvp').addClass("alert alert-success");
   return true;
 }
 
