@@ -327,8 +327,8 @@ $(document).on("click", ".next", function (event) {
       ref.once("value")
         .then(function (snapshot) {
           rsvpIdDb = snapshot.val(); // rsvp id from db
-          valid = validateRsvpCode(rsvpIdDb, rsvpIdInput);
         });
+        valid = validateRsvpCode(rsvpIdDb, rsvpIdInput);
       break;
     case "s2":
       valid = true;
