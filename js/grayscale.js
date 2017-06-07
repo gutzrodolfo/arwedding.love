@@ -13,8 +13,6 @@ $(window).scroll(function () {
   }
 });
 
-
-
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function () {
   $('a.page-scroll').bind('click', function (event) {
@@ -37,120 +35,6 @@ $('.navbar-collapse ul li a').click(function () {
 $("a").mouseup(function () {
   $(this).blur();
 })
-
-// rspv form
-
-//jQuery time
-var current_fs, next_fs, previous_fs; //fieldsets
-var left, opacity, scale; //fieldset properties which we will animate
-var animating; //flag to prevent quick multi-click glitches
-
-$(".next").click(function () {
-  if (animating) return false;
-  animating = true;
-
-
-  current_fs = $(this).parent();
-
-  // authenticate 
-  var rsvpInputValue = $('#msform #rsvp').val();
-
-var valid = false; 
-
-  var ref = firebase.database().ref("RsvpId");
-ref.once("value")
-  .then(function(snapshot) {
-    var value = snapshot.val();
-     valid = validateRsvpCode(value, rsvpInputValue);
-  });
-
-
-  if (valid != true) {return}
-
-  
-
-  next_fs = $(this).parent().next();
-
-  //activate next step on progressbar using the index of next_fs
-  $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-
-  //show the next fieldset
-  next_fs.show();
-  //hide the current fieldset with style
-  current_fs.animate({ opacity: 0 }, {
-    step: function (now, mx) {
-      //as the opacity of current_fs reduces to 0 - stored in "now"
-      //1. scale current_fs down to 80%
-      scale = 1 - (1 - now) * 0.2;
-      //2. bring next_fs from the right(50%)
-      left = (now * 50) + "%";
-      //3. increase opacity of next_fs to 1 as it moves in
-      opacity = 1 - now;
-      current_fs.css({
-        'transform': 'scale(' + scale + ')',
-        'position': 'absolute'
-      });
-      next_fs.css({ 'left': left, 'opacity': opacity });
-    },
-    duration: 800,
-    complete: function () {
-      current_fs.hide();
-      animating = false;
-    },
-    //this comes from the custom easing plugin
-    easing: 'easeInOutBack'
-  });
-});
-
-$(".previous").click(function () {
-  if (animating) return false;
-  animating = true;
-
-  current_fs = $(this).parent();
-  previous_fs = $(this).parent().prev();
-
-  //de-activate current step on progressbar
-  $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-
-  //show the previous fieldset
-  previous_fs.show();
-  //hide the current fieldset with style
-  current_fs.animate({ opacity: 0 }, {
-    step: function (now, mx) {
-      //as the opacity of current_fs reduces to 0 - stored in "now"
-      //1. scale previous_fs from 80% to 100%
-      scale = 0.8 + (1 - now) * 0.2;
-      //2. take current_fs to the right(50%) - from 0%
-      left = ((1 - now) * 50) + "%";
-      //3. increase opacity of previous_fs to 1 as it moves in
-      opacity = 1 - now;
-      current_fs.css({ 'left': left });
-      previous_fs.css({ 'transform': 'scale(' + scale + ')', 'opacity': opacity });
-    },
-    duration: 800,
-    complete: function () {
-      current_fs.hide();
-      animating = false;
-    },
-    //this comes from the custom easing plugin
-    easing: 'easeInOutBack'
-  });
-});
-
-$(".submit").click(function () {
-  return false;
-})
-
-function validateRsvpCode(dbId, inputId) {
-  if (dbId != inputId) {   
-    console.log("NOT VALID!");
-    $('#msform #rsvp').val("NOT VALID"); 
-    return false;
-  }
-  console.log("VALID")
-  $('#msform #rsvp').val("VALID!");
-  return true;
-}
 
 // Google Maps Scripts
 // When the window has finished loading create our google map below
@@ -410,3 +294,121 @@ function init() {
   //slick carousel initialize (single item)
   $('.single-item').slick();
 }
+
+
+//RSVP Registration
+
+//jQuery time
+var current_fs, next_fs, previous_fs; //fieldsets
+var left, opacity, scale; //fieldset properties which we will animate
+var animating; //flag to prevent quick multi-click glitches
+var rsvpIdDb;
+var rsvpIdInput;
+
+$(".next").click(function () {
+  if (animating) return false;
+  animating = true;
+
+  current_fs = $(this).parent();
+
+  // get rsvp input 
+  rsvpIdInput = $('#msform #rsvp').val();
+
+  var ref = firebase.database().ref("RsvpId");
+  ref.once("value")
+    .then(function (snapshot) {
+      rsvpIdDb = snapshot.val(); // rsvp id from db
+    });
+
+  var valid = validateRsvpCode(rsvpIdDb, rsvpIdInput);
+
+  if (valid == true) {
+    next_fs = $(this).parent().next();
+
+    //activate next step on progressbar using the index of next_fs
+    $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+    //show the next fieldset
+    next_fs.show();
+    //hide the current fieldset with style
+    current_fs.animate({ opacity: 0 }, {
+      step: function (now, mx) {
+        //as the opacity of current_fs reduces to 0 - stored in "now"
+        //1. scale current_fs down to 80%
+        scale = 1 - (1 - now) * 0.2;
+        //2. bring next_fs from the right(50%)
+        left = (now * 50) + "%";
+        //3. increase opacity of next_fs to 1 as it moves in
+        opacity = 1 - now;
+        current_fs.css({
+          'transform': 'scale(' + scale + ')',
+          'position': 'absolute'
+        });
+        next_fs.css({ 'left': left, 'opacity': opacity });
+      },
+      duration: 800,
+      complete: function () {
+        current_fs.hide();
+        animating = false;
+      },
+      //this comes from the custom easing plugin
+      easing: 'easeInOutBack'
+    });
+  }
+  else {
+    return false;
+  }
+
+});
+
+$(".previous").click(function () {
+  if (animating) return false;
+  animating = true;
+
+  current_fs = $(this).parent();
+  previous_fs = $(this).parent().prev();
+
+  //de-activate current step on progressbar
+  $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+  //show the previous fieldset
+  previous_fs.show();
+  //hide the current fieldset with style
+  current_fs.animate({ opacity: 0 }, {
+    step: function (now, mx) {
+      //as the opacity of current_fs reduces to 0 - stored in "now"
+      //1. scale previous_fs from 80% to 100%
+      scale = 0.8 + (1 - now) * 0.2;
+      //2. take current_fs to the right(50%) - from 0%
+      left = ((1 - now) * 50) + "%";
+      //3. increase opacity of previous_fs to 1 as it moves in
+      opacity = 1 - now;
+      current_fs.css({ 'left': left });
+      previous_fs.css({ 'transform': 'scale(' + scale + ')', 'opacity': opacity });
+    },
+    duration: 800,
+    complete: function () {
+      current_fs.hide();
+      animating = false;
+    },
+    //this comes from the custom easing plugin
+    easing: 'easeInOutBack'
+  });
+});
+
+$(".submit").click(function () {
+  return false;
+})
+
+function validateRsvpCode(dbId, inputId) {
+  if (dbId != inputId) {
+    console.log("NOT VALID!");
+    $('#msform #rsvp').val("NOT VALID");
+    return false;
+  }
+  console.log("VALID")
+  $('#msform #rsvp').val("VALID!");
+  return true;
+}
+
+
