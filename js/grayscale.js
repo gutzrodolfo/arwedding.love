@@ -328,7 +328,7 @@ $(document).on("click", ".next", function (event) {
         .then(function (snapshot) {
           rsvpIdDb = snapshot.val(); // rsvp id from db
         });
-
+      sleep(1000);
       valid = validateRsvpCode(rsvpIdDb, rsvpIdInput);
       break;
     case "s2":
@@ -465,4 +465,8 @@ function addFields(n) {
 function removeFields(n) {
   var removeField = newFields.slice(n).remove();
   newFields = newFields.not(removeField);
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
