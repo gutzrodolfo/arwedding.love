@@ -305,7 +305,7 @@ var animating; //flag to prevent quick multi-click glitches
 var rsvpIdDb;
 var rsvpIdInput;
 
-$(".next").click(function () {
+$(document).on("click", ".next", function () {
   if (animating) return false;
   animating = true;
 
