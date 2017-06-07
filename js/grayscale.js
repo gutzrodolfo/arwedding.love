@@ -306,8 +306,8 @@ var rsvpIdDb;
 var rsvpIdInput;
 
 $(document).on("click", ".next", function () {
-  if (animating) return false;
-  animating = true;
+ // if (animating) return false;
+ // animating = true;
 
   current_fs = $(this).parent();
 
