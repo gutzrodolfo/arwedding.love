@@ -355,9 +355,6 @@ $(".next").click(function () {
       easing: 'easeInOutBack'
     });
   }
-  else {
-    return false;
-  }
 
 });
 
