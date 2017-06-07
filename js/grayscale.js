@@ -327,10 +327,8 @@ $(document).on("click", ".next", function (event) {
       ref.once("value")
         .then(function (snapshot) {
           rsvpIdDb = snapshot.val(); // rsvp id from db
+          valid = validateRsvpCode(rsvpIdDb, rsvpIdInput);
         });
-      if (rsvpIdDb)  {
-        valid = validateRsvpCode(rsvpIdDb, rsvpIdInput);
-      }
       break;
     case "s2":
       var ref = firebase.database().ref();
