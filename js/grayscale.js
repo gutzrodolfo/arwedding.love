@@ -335,13 +335,16 @@ $(document).on("click", ".next", function (event) {
       var ref = firebase.database().ref();
       var newStoreRef = ref.push();
       newStoreRef.set({
-        "name": $('#msform #fs2name').val(),
-        "email": $('#msform #fs2email').val(),
-        "partySize": $('#msform #fs2partysize').val()
+        attendee: {
+          "name": $('#msform #fs2name').val(),
+          "email": $('#msform #fs2email').val(),
+          "partySize": $('#msform #fs2partysize').val()
+        }
+
       });
       partySize = $('#msform #fs2partysize').val();
       break;
-      case "s3":
+    case "s3":
       addFields(partySize);
       break;
   }
@@ -424,7 +427,7 @@ $(".submit").click(function () {
 function validateRsvpCode(dbId, inputId) {
   $('#msform #rsvp').removeClass("alert alert-danger");
   $('#msform #rsvp').removeClass("alert alert-success");
-
+  console.log("dbid iid: ", dbid + inputId);
   if (dbId != inputId) {
     console.log("NOT VALID!");
     $('#msform #rsvp').val("NOT VALID");
