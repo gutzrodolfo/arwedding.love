@@ -331,10 +331,10 @@ $(document).on("click", ".next", function (even) {
       valid = validateRsvpCode(rsvpIdDb, rsvpIdInput);
       break;
     case "s2":
-      var ref = firebase.database().ref("RsvpId");
+      var ref = firebase.database().ref();
       var newStoreRef = ref.push();
       newStoreRef.set({
-        "RsvpId": "abc123"
+        "test1": "abc123"
       });
       $("#fs2 input").each(function () {
         console.log("v: ", $(this).val());
