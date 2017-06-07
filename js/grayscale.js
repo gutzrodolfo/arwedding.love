@@ -305,7 +305,7 @@ var animating; //flag to prevent quick multi-click glitches
 var rsvpIdDb;
 var rsvpIdInput;
 var step;
-var valid = true;
+var valid = false;
 var partySize;
 
 $(document).on("click", ".next", function (event) {
@@ -331,6 +331,7 @@ $(document).on("click", ".next", function (event) {
         });
       break;
     case "s2":
+      valid = true;
       var ref = firebase.database().ref();
       var newStoreRef = ref.push();
       newStoreRef.set({
@@ -344,6 +345,7 @@ $(document).on("click", ".next", function (event) {
       partySize = $('#msform #fs2partysize').val();
       break;
     case "s3":
+      valid = true;
       addFields(partySize);
       break;
   }
@@ -426,6 +428,7 @@ $(".submit").click(function () {
 function validateRsvpCode(dbId, inputId) {
   $('#msform #rsvp').removeClass("alert alert-danger");
   $('#msform #rsvp').removeClass("alert alert-success");
+
   console.log("dbid iid: ", dbid + inputId);
   if (dbId != inputId) {
     console.log("NOT VALID!");
