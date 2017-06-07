@@ -317,19 +317,33 @@ $(document).on("click", ".next", function (even) {
 
   current_fs = $(this).parent();
 
-  if (step === "s1") {
-    // get rsvp input 
-    rsvpIdInput = $('#msform #rsvp').val();
+  switch (step) {
+    case "s1":
+      // get rsvp input 
+      rsvpIdInput = $('#msform #rsvp').val();
 
-    var ref = firebase.database().ref("RsvpId");
-    ref.once("value")
-      .then(function (snapshot) {
-        rsvpIdDb = snapshot.val(); // rsvp id from db
+      var ref = firebase.database().ref("RsvpId");
+      ref.once("value")
+        .then(function (snapshot) {
+          rsvpIdDb = snapshot.val(); // rsvp id from db
+        });
+
+      valid = validateRsvpCode(rsvpIdDb, rsvpIdInput);
+      break;
+    case "s2":
+      var ref = firebase.database().ref("RsvpId");
+      var newStoreRef = ref.push();
+      newStoreRef.set({
+        name: "User",
+        "a": "23",
+        "b": "asfasdf"
       });
-
-    valid = validateRsvpCode(rsvpIdDb, rsvpIdInput);
+      $("#fs2 input").each(function () {
+        console.log("v: ", $(this).val());
+        // $(this).val(); check here what you want.
+      })
+      break;
   }
-
 
   if (valid == true) {
     next_fs = $(this).parent().next();
@@ -422,4 +436,29 @@ function validateRsvpCode(dbId, inputId) {
   return true;
 }
 
+var input = $('<input type="text" name="fname" placeholder="First Name" required/>');
+var newFields = $('');
 
+$('#qty').bind('blur keyup change', function () {
+  var n = this.value || 0;
+  if (n + 1) {
+    if (n > newFields.length) {
+      addFields(n);
+    } else {
+      removeFields(n);
+    }
+  }
+});
+
+function addFields(n) {
+  for (i = newFields.length; i < n; i++) {
+    var newInput = input.clone();
+    newFields = newFields.add(newInput);
+    newInput.appendTo('#newFields');
+  }
+}
+
+function removeFields(n) {
+  var removeField = newFields.slice(n).remove();
+  newFields = newFields.not(removeField);
+}
