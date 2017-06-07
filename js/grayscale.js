@@ -334,9 +334,7 @@ $(document).on("click", ".next", function (even) {
       var ref = firebase.database().ref("RsvpId");
       var newStoreRef = ref.push();
       newStoreRef.set({
-        name: "User",
-        "a": "23",
-        "b": "asfasdf"
+        "RsvpId": "abc123"
       });
       $("#fs2 input").each(function () {
         console.log("v: ", $(this).val());
