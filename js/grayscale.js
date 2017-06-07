@@ -311,8 +311,12 @@ $(document).on("click", ".next", function () {
   // if (animating) return false;
   // animating = true;
 
-  step = $("input").attr("id");
+   $("input").click(function(event) {
+        step = event.target.id;
+    });
+
   console.log("step: ", step);
+
   current_fs = $(this).parent();
 
   if (step = "s1") {
