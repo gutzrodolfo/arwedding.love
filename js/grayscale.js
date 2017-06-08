@@ -38,7 +38,7 @@ $("a").mouseup(function () {
 
 // Google Maps Scripts
 // When the window has finished loading create our google map below
- google.maps.event.addDomListener(window, 'load', init);
+// google.maps.event.addDomListener(window, 'load', init);
 
 function init() {
   // Basic options for a simple Google Map
@@ -54,7 +54,6 @@ function init() {
     disableDefaultUI: false,
     scrollwheel: false,
     draggable: false,
-    animation: google.maps.Animation.DROP,
 
 
     styles: [
@@ -281,6 +280,10 @@ function init() {
   // Create the Google Map using out element and options defined above
   var map = new google.maps.Map(mapElement, mapOptions);
 
+  google.maps.event.addDomListener(window, 'resize', function () {
+    map.setCenter(center);
+  });
+
   // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
   var image = 'img/wedding_marker.png';
   var myLatLng = new google.maps.LatLng(21.411912, -103.11755);
@@ -290,19 +293,9 @@ function init() {
     icon: image,
     animation: google.maps.Animation.DROP
   });
-  //slick carousel initialize (single item)
-  $('.single-item').slick();
 }
 
-  google.maps.event.addDomListener(window, 'load', init);
-  google.maps.event.addDomListener(window, "resize", function () {
-    var center = map.getCenter();
-    google.maps.event.trigger(map, "resize");
-    map.setCenter(center);
-  });
-
 //RSVP Registration
-
 //jQuery time
 var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
