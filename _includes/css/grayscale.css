@@ -285,7 +285,7 @@ a:focus {
 
     #map {
         height: 400px;
-        margin-top: 75px;
+        margin-top: 10px;
     }
 }
 
@@ -395,6 +395,10 @@ body {
 
 #group, #about {
     color: #949A9F; 
+}
+
+#about {
+    padding-top: 200px;
 }
 
 #group{
