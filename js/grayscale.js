@@ -290,6 +290,9 @@ function init() {
     icon: image,
     animation: google.maps.Animation.DROP
   });
+  //slick carousel initialize (single item)
+  $('.single-item').slick();
+}
 
   google.maps.event.addDomListener(window, 'load', init);
   google.maps.event.addDomListener(window, "resize", function () {
@@ -297,10 +300,6 @@ function init() {
     google.maps.event.trigger(map, "resize");
     map.setCenter(center);
   });
-  //slick carousel initialize (single item)
-  $('.single-item').slick();
-}
-
 
 //RSVP Registration
 
