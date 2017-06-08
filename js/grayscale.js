@@ -291,6 +291,7 @@ function init() {
     animation: google.maps.Animation.DROP
   });
 
+  google.maps.event.trigger(map, "resize");
   //slick carousel initialize (single item)
   $('.single-item').slick();
 }
