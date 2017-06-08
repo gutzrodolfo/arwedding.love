@@ -281,6 +281,7 @@ function init() {
   var map = new google.maps.Map(mapElement, mapOptions);
 
   google.maps.event.trigger(map, "resize");
+  map.setZoom( map.getZoom() );
 
   // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
   var image = 'img/wedding_marker.png';
