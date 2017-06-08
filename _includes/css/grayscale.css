@@ -256,6 +256,10 @@ a:focus {
     padding-top: 100px;
 }
 
+.content-section #rsvp {
+    padding-top: 10px;
+}
+
 .download-section {
     width: 100%;
     padding: 50px 0;
@@ -280,7 +284,7 @@ a:focus {
     }
 
     .download-section {
-        padding: 100px 0;
+        padding: 5px 0;
     }
 
     #map {
