@@ -6,7 +6,7 @@ description: "01.03.2018 <br /> Juchipila, Zac, Mx."
 
 # Color settings (hex-codes without the leading hash-tag)
 color:
-  primary-dark: '#000'
+  primary-dark: '#fff'
   links: '#fff'
 
 # Footer settings
