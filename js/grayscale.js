@@ -291,7 +291,12 @@ function init() {
     animation: google.maps.Animation.DROP
   });
 
-  google.maps.event.trigger(map, "resize");
+  google.maps.event.addDomListener(window, 'load', initialize);
+  google.maps.event.addDomListener(window, "resize", function () {
+    var center = map.getCenter();
+    google.maps.event.trigger(map, "resize");
+    map.setCenter(center);
+  });
   //slick carousel initialize (single item)
   $('.single-item').slick();
 }
@@ -329,7 +334,7 @@ $(document).on("click", ".next", function (event) {
         .then(function (snapshot) {
           rsvpIdDb = snapshot.val(); // rsvp id from db
         });
-        valid = validateRsvpCode(rsvpIdDb, rsvpIdInput);
+      valid = validateRsvpCode(rsvpIdDb, rsvpIdInput);
       break;
     case "s2":
       valid = true;
