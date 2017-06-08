@@ -140,7 +140,7 @@ a:focus {
     height: 100%;
     padding: 100px 0;
     text-align: center;
-    color: #949A9F;
+    color: #fff;
     background: url(/img/intro-bg.jpg) no-repeat top center scroll;
     background-size: 1500px 1125px;
     background-color: {{ site.color.primary-dark }};
