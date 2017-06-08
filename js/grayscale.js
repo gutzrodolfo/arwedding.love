@@ -280,9 +280,7 @@ function init() {
   // Create the Google Map using out element and options defined above
   var map = new google.maps.Map(mapElement, mapOptions);
 
-  google.maps.event.addDomListener(window, 'resize', function () {
-    map.setCenter(center);
-  });
+  google.maps.event.trigger(map, "resize");
 
   // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
   var image = 'img/wedding_marker.png';
