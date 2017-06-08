@@ -285,7 +285,7 @@ a:focus {
 
     #map {
         height: 400px;
-        margin-top: 10px;
+        margin-top: 5px;
     }
 }
 
@@ -398,7 +398,7 @@ body {
 }
 
 #about {
-    padding-top: 200px;
+    margin-top: 200px;
 }
 
 #group{
