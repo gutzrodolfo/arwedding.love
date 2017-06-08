@@ -568,7 +568,7 @@ body {
 /*The number of the step and the connector before it = green*/
 #progressbar li.active:before,  #progressbar li.active:after{
 	background: #27AE60;
-	color: #949A9F;
+	color: #fff;
 }
 
 
