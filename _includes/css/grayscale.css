@@ -7,7 +7,7 @@
 body {
     width: 100%;
     height: 100%;
-    font-family: "Marck Script";
+    font-family: "Lobster";
     color: #949A9F;
     background-color: {{ site.color.primary-dark }};
 }
