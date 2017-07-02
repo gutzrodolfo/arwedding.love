@@ -234,65 +234,71 @@
 
 	});
 
-	$('#reservation').validate({ // initialize the plugin
-		submitHandler: function (event) {
-			console.log("in function!");
+	$('#reservation #submit').on('click', function () {
+		$('#reservation').validate({ // initialize the plugin
+			submitHandler: function (event) {
 
-			var nameVal = $('#reservation #name').val();
-			var emailVal = $('#reservation #email').val();
-			var messageVal = $('#reservation #message').val();
 
-			var inputId = $('#reservation #rsvp').val();
-			var reservationCodeRef = firebase.database().ref("reservationCode");
-			var guestRef = firebase.database().ref("guests");
-			reservationCodeRef.once("value")
-				.then(function (snapshot) {
+				// save form values
+				var nameVal = $('#reservation #name').val();
+				var emailVal = $('#reservation #email').val();
+				var messageVal = $('#reservation #message').val();
 
-					// clear form CSS
-					$('#reservation #rsvp').removeClass("input:invalid");
-					$('#reservation #rsvp').removeClass("input:valid");
+				// get input rsvp code and rsvp code from firebase
+				var inputId = $('#reservation #rsvp').val();
+				var reservationCodeRef = firebase.database().ref("reservationCode");
 
-					// validate reservation code
-					if (snapshot.val() === inputId) {
-						// if valid, return response
-						console.log("VALID")
+				// get reference to guests object from firebase
+				var guestRef = firebase.database().ref("guests");
+
+				reservationCodeRef.once("value")
+					.then(function (snapshot) {
+
+						// validate reservation code
+						if (snapshot.val() === inputId) {
+							// if valid, return response
+							console.log("VALID")
+
+							var boxDiv = document.getElementById("box1");
+							boxDiv.innerHTML = boxDiv.innerHTML + '<div class="overlay" id="overlay"><p>text center</p></div>';
+
+							var div = document.getElementById('overlay');
+							div.innerHTML = "";
+							div.innerHTML = '<div class="txt"><i class="fa fa-check-circle-o" aria-hidden="true"></i><p><strong>Success!</strong></p></div>';
+
+							// event.preventDefault();
+							$("div.overlay").fadeOut(5000);
+
+							// save data to firebase
+							guestRef.push({
+								name: {
+									email: emailVal,
+									message: messageVal,
+									name: nameVal
+								}
+							});
+
+							return;
+						}
+
+						console.log("NOT VALID!");
 
 						var boxDiv = document.getElementById("box1");
 						boxDiv.innerHTML = boxDiv.innerHTML + '<div class="overlay" id="overlay"><p>text center</p></div>';
 
 						var div = document.getElementById('overlay');
 						div.innerHTML = "";
-						div.innerHTML = '<div class="txt"><i class="fa fa-check-circle-o" aria-hidden="true"></i><p><strong>Success!</strong></p></div>';
-						
-					    // event.preventDefault();
+						div.innerHTML = '<div class="txt"><i class="fa fa-exclamation-circle txt" aria-hidden="true"></i><p><strong>Invalid Code<strong></p></div>'
+
+						// event.preventDefault();
 						$("div.overlay").fadeOut(5000);
 
-						// save data to firebase
-						guestRef.push({
-							name: {
-								email: emailVal,
-								message: messageVal,
-								name: nameVal
-							}
-						});
+					});
 
-						return;
-					}
+			}
 
-					console.log("NOT VALID!");
-
-					var boxDiv = document.getElementById("box1");
-					boxDiv.innerHTML = boxDiv.innerHTML + '<div class="overlay" id="overlay"><p>text center</p></div>';
-
-					var div = document.getElementById('overlay');
-					div.innerHTML = "";
-					div.innerHTML = '<div class="txt"><i class="fa fa-exclamation-circle txt" aria-hidden="true"></i><p><strong>Invalid Code<strong></p></div>'
-					
-					// event.preventDefault();
-					$("div.overlay").fadeOut(5000, function() { location.reload();});
-					
-				});
-		}
-	});
-
+		});
+	})
 })(jQuery);
+
+
