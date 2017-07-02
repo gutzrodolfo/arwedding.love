@@ -600,6 +600,7 @@
 		background: #ffffff;
 		color: #39454b;
 		padding: 2em;
+		position: relative;
 	}
 
 		.box > :last-child {
@@ -2167,4 +2168,34 @@
     border-radius: 99em;
     border: 2px solid gray;
     /*box-shadow: 0 3px 2px whitesmoke;  */
+}
+
+.fa-exclamation-circle {
+	color: #ffbb33;
+	font-size: 120px;
+}
+
+.fa-check-circle-o {
+	color: #00C851;
+	font-size: 120px;
+}
+
+.overlay {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(0, 0, 0, 0.1);
+    background: url(data:;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABl0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuNUmK/OAAAAATSURBVBhXY2RgYNgHxGAAYuwDAA78AjwwRoQYAAAAAElFTkSuQmCC) repeat scroll transparent\9; /* ie fallback png background image */
+    z-index:9999;
+    color:white;
+	display: table-cell;
+}
+
+.txt {
+    display: inline-block;
+    vertical-align: middle;
+    position:relative;
+	margin-top: 125px;
 }

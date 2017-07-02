@@ -235,7 +235,7 @@
 	});
 
 	$('#reservation').validate({ // initialize the plugin
-		submitHandler: function () {
+		submitHandler: function (event) {
 			console.log("in function!");
 
 			var nameVal = $('#reservation #name').val();
@@ -253,28 +253,44 @@
 					$('#reservation #rsvp').removeClass("input:valid");
 
 					// validate reservation code
-					if (snapshot.val() !== inputId) {
-						console.log("NOT VALID!");
-						$('#reservation #rsvp').val("NOT VALID");
-						$('#reservation #rsvp').addClass("input:invalid");
+					if (snapshot.val() === inputId) {
+						// if valid, return response
+						console.log("VALID")
+
+						var boxDiv = document.getElementById("box1");
+						boxDiv.innerHTML = boxDiv.innerHTML + '<div class="overlay" id="overlay"><p>text center</p></div>';
+
+						var div = document.getElementById('overlay');
+						div.innerHTML = "";
+						div.innerHTML = '<div class="txt"><i class="fa fa-check-circle-o" aria-hidden="true"></i><p><strong>Success!</strong></p></div>';
+						
+					    // event.preventDefault();
+						$("div.overlay").fadeOut(5000);
+
+						// save data to firebase
+						guestRef.push({
+							name: {
+								email: emailVal,
+								message: messageVal,
+								name: nameVal
+							}
+						});
+
 						return;
 					}
 
-					// if valid, return response
-					console.log("VALID")
-					$('#reservation #rsvp').val("VALID!");
-					$('#reservation #rsvp').addClass("input:valid");
+					console.log("NOT VALID!");
+
+					var boxDiv = document.getElementById("box1");
+					boxDiv.innerHTML = boxDiv.innerHTML + '<div class="overlay" id="overlay"><p>text center</p></div>';
+
+					var div = document.getElementById('overlay');
+					div.innerHTML = "";
+					div.innerHTML = '<div class="txt"><i class="fa fa-exclamation-circle txt" aria-hidden="true"></i><p><strong>Invalid Code<strong></p></div>'
 					
-					// save data to firebase
-					guestRef.set({
-						name: {
-							email: emailVal,
-							message: messageVal,
-							name: nameVal
-						}
-					});
-
-
+					// event.preventDefault();
+					$("div.overlay").fadeOut(5000, function() { location.reload();});
+					
 				});
 		}
 	});
