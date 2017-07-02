@@ -901,6 +901,14 @@
 			display: none;
 		}
 
+/* Wrapper */
+
+	#wrapper {
+		position: relative;
+		z-index: 1;
+	}
+
+
 /* Image */
 
 	.image {
@@ -1266,7 +1274,7 @@
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
-		width: 45em;
+		width: 75em;
 		max-width: 100%;
 		margin: 0 auto 2em auto;
 	}
@@ -1768,6 +1776,12 @@
 		overflow-x: hidden;
 	}
 
+		.main > .content-gallery {
+			width: 75em;
+			max-width: calc(100% - 4em);
+			margin: 0 auto;
+		}
+		
 		.main > .content {
 			width: 45em;
 			max-width: calc(100% - 4em);

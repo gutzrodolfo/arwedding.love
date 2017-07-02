@@ -62,6 +62,46 @@
 		<a href="#two" class="button style2 down anchored">Next</a>
 	</section>
 
+	<!-- Slides -->
+	<section id="slides" class="main style3 primary">
+		<div class="content-gallery">
+			<header>
+				<h2>Photos</h2>
+				<p>Hola</p>
+			</header>
+
+			<!-- Gallery  -->
+			<div class="gallery">
+
+				<article class="from-top">
+					<a href="images/fulls/ar03.jpg" class="image fit"><img src="images/thumbs/ar03.jpg" title="pic three" alt="" /></a>
+				</article>
+				<article class="from-right">
+					<a href="images/fulls/ar02.jpg" class="image fit"><img src="images/thumbs/ar02.jpg" title="pic two" alt="" /></a>
+				</article>
+				<article class="from-left">
+					<a href="images/fulls/ar01.jpg" class="image fit"><img src="images/thumbs/ar01.jpg" title="pic one" alt="" /></a>
+				</article>
+				<article class="from-right">
+					<a href="images/fulls/ar03.jpg" class="image fit"><img src="images/thumbs/ar03.jpg" title="pic three" alt="" /></a>
+				</article>
+				<article class="from-left">
+					<a href="images/fulls/ar04.jpg" class="image fit"><img src="images/thumbs/ar04.jpg" title="pic four" alt="" /></a>
+				</article>
+				<article class="from-right">
+					<a href="images/fulls/ar05.jpg" class="image fit"><img src="images/thumbs/ar05.jpg" title="pic five" alt="" /></a>
+				</article>
+				<article class="from-left">
+					<a href="images/fulls/ar06.jpg" class="image fit"><img src="images/thumbs/ar06.jpg" title="pic six" alt="" /></a>
+				</article>
+				<article class="from-bottom">
+					<a href="images/fulls/ar07.jpg" class="image fit"><img src="images/thumbs/ar07.jpg" title="pic seven" alt="" /></a>
+				</article>
+			</div>
+
+		</div>
+	</section>
+
 	<!-- Two -->
 	<section id="two" class="main style2 left dark fullscreen">
 		<div class="content box style2">
@@ -114,6 +154,7 @@
 				<article class="from-left">
 					<img src="images/fulls/marissa.jpg" class="img-circle" alt="marissa"> Marissa Viramontes
 				</article>
+
 				<article class="from-right">
 					<img src="images/fulls/sal.jpg" class="img-circle" alt="sal"> Salvador Orozco
 				</article>
@@ -154,11 +195,12 @@
 				<p>Confirm your reservation</p>
 			</header>
 			<div class="box" id="box1">
-				<form id="reservation" >
-					<div class="field full" id="rsvpDiv"><input type="text" name="rsvp" placeholder="RSVP Code" id="rsvp" maxlength="7" required pattern="^[a-zA-Z0-9_]*$"/></div>
+				<form id="reservation">
+					<div class="field full" id="rsvpDiv"><input type="text" name="rsvp" placeholder="RSVP Code" id="rsvp" maxlength="7" required pattern="^[a-zA-Z0-9_]*$" /></div>
 					<div class="field half first"><input type="text" name="name" placeholder="Name" id="name" maxlength="35" required/></div>
-					<div class="field half"><input type="email" name="email" placeholder="Email" id="email" maxlength="40"required/></div>
-					<div class="field"><textarea name="message" id="message" placeholder="Message.. Please include number of guests in your party!" rows="8" required></textarea></div>
+					<div class="field half"><input type="email" name="email" placeholder="Email" id="email" maxlength="40" required/></div>
+					<div class="field"><textarea name="message" id="message" placeholder="Message.. Please include number of guests in your party!" rows="8"
+						 required></textarea></div>
 					<ul class="actions">
 						<li><input id="submit" type="submit" value="Confirm" /></li>
 					</ul>

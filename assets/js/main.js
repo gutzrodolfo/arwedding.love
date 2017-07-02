@@ -236,8 +236,8 @@
 
 	$('#reservation #submit').on('click', function () {
 		$('#reservation').validate({ // initialize the plugin
-			submitHandler: function (event) {
 
+			submitHandler: function (form) {
 
 				// save form values
 				var nameVal = $('#reservation #name').val();
@@ -278,7 +278,7 @@
 								}
 							});
 
-							return;
+							form.submit();
 						}
 
 						console.log("NOT VALID!");
@@ -292,7 +292,7 @@
 
 						// event.preventDefault();
 						$("div.overlay").fadeOut(5000);
-
+						form.reload();
 					});
 
 			}
