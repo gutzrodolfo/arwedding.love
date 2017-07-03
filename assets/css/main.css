@@ -26,9 +26,9 @@
 		line-height: 1;
 	}
 
-	/*ol, ul {
+	ol, ul {
 		list-style: none;
-	}*/
+	}
 
 	blockquote, q {
 		quotes: none;
@@ -2189,7 +2189,7 @@
 	font-size: 120px;
 }
 
-.fa-check-circle {
+.fa-check-circle-o {
 	color: #00E676;
 	font-size: 120px;
 }
