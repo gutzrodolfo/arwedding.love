@@ -260,14 +260,14 @@
 							console.log("VALID")
 
 							var boxDiv = document.getElementById("box1");
-							boxDiv.innerHTML = boxDiv.innerHTML + '<div class="overlay" id="overlay"><p>text center</p></div>';
+							boxDiv.innerHTML = boxDiv.innerHTML + '<div class="overlay" id="overlay"></div>';
 
 							var div = document.getElementById('overlay');
 							div.innerHTML = "";
-							div.innerHTML = '<div class="txt"><i class="fa fa-check-circle-o" aria-hidden="true"></i><p><strong>Success!</strong></p></div>';
+							div.innerHTML = '<div class="txt"><i class="fa fa-check-circle-o" aria-hidden="true"></i><p class="weight">Success!</p></div>';
 
 							// event.preventDefault();
-							$("div.overlay").fadeOut(5000);
+							$("div.overlay").fadeOut(4000);
 
 							// save data to firebase
 							guestRef.push({
@@ -284,14 +284,14 @@
 						console.log("NOT VALID!");
 
 						var boxDiv = document.getElementById("box1");
-						boxDiv.innerHTML = boxDiv.innerHTML + '<div class="overlay" id="overlay"><p>text center</p></div>';
+						boxDiv.innerHTML = boxDiv.innerHTML + '<div class="overlay" id="overlay"></div>';
 
 						var div = document.getElementById('overlay');
 						div.innerHTML = "";
-						div.innerHTML = '<div class="txt"><i class="fa fa-exclamation-circle txt" aria-hidden="true"></i><p><strong>Invalid Code<strong></p></div>'
+						div.innerHTML = '<div class="txt"><i class="fa fa-exclamation-circle" aria-hidden="true"></i><p>Invalid Code</p></div>'
 
 						// event.preventDefault();
-						$("div.overlay").fadeOut(5000);
+						$("div.overlay").fadeOut(4000);
 						form.reload();
 					});
 
