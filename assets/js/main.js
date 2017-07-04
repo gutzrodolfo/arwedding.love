@@ -280,8 +280,7 @@
 									email: emailVal,
 									message: messageVal,
 									name: nameVal,
-									submit: dateVal,
-									numOfGuests: 4
+									timestamp: firebase.database.ServerValue.TIMESTAMP
 								}
 							});
 							return true;
