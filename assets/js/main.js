@@ -6,6 +6,10 @@
 
 (function ($) {
 
+	localStorage.setItem(name, $('#reservation #name').val());
+    localStorage.setItem(email, $('#reservation #email').val());
+    localStorage.setItem(message, $('#reservation #message').val());
+
 	skel.breakpoints({
 		xxlarge: '(max-width: 1920px)',
 		xlarge: '(max-width: 1680px)',
@@ -234,15 +238,16 @@
 
 	});
 
-	$('#reservation #submit').on('click', function () {
+	// $('#reservation #submit').on('click', function (event) {
 		$('#reservation').validate({ // initialize the plugin
 
-			submitHandler: function (form) {
+			submitHandler: function (event) {
 
 				// save form values
 				var nameVal = $('#reservation #name').val();
 				var emailVal = $('#reservation #email').val();
 				var messageVal = $('#reservation #message').val();
+				var dateVal = new Date();
 
 				// get input rsvp code and rsvp code from firebase
 				var inputId = $('#reservation #rsvp').val();
@@ -270,15 +275,16 @@
 							$("div.overlay").fadeOut(4000);
 
 							// save data to firebase
-							guestRef.push({
+							guestRef.set({
 								name: {
 									email: emailVal,
 									message: messageVal,
-									name: nameVal
+									name: nameVal,
+									submit: 'vaosdfo',
+									numOfGuests: 4
 								}
 							});
-
-							form.submit();
+							return true;
 						}
 
 						console.log("NOT VALID!");
@@ -292,13 +298,13 @@
 
 						// event.preventDefault();
 						$("div.overlay").fadeOut(4000);
-						form.reload();
+						return false;
 					});
-
 			}
-
+			
 		});
-	})
+		// return false;
+	// })
 })(jQuery);
 
 
