@@ -275,12 +275,12 @@
 							$("div.overlay").fadeOut(4000);
 
 							// save data to firebase
-							guestRef.set({
+							guestRef.push({
 								name: {
 									email: emailVal,
 									message: messageVal,
 									name: nameVal,
-									submit: 'vaosdfo',
+									submit: dateVal,
 									numOfGuests: 4
 								}
 							});
