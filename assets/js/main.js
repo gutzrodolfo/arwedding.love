@@ -260,7 +260,7 @@
 					.then(function (snapshot) {
 
 						// validate reservation code
-						if (snapshot.val() === inputId) {
+						if (snapshot.val() === inputId.toLowerCase()) {
 							// if valid, return response
 							console.log("VALID")
 
