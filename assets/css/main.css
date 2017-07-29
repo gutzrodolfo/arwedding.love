@@ -2223,3 +2223,8 @@
     position:relative;
 	margin-top: 100px;
 }
+
+.center {
+    margin: auto;
+    width: 50%;
+}
