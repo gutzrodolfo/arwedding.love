@@ -6,9 +6,9 @@
 
 (function ($) {
 
-	localStorage.setItem(name, $('#reservation #name').val());
-    localStorage.setItem(email, $('#reservation #email').val());
-    localStorage.setItem(message, $('#reservation #message').val());
+	// localStorage.setItem(name, $('#reservation #name').val());
+    // localStorage.setItem(email, $('#reservation #email').val());
+    // localStorage.setItem(message, $('#reservation #message').val());
 
 	skel.breakpoints({
 		xxlarge: '(max-width: 1920px)',
