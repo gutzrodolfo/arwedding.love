@@ -333,6 +333,11 @@
   $(window).click(function() {
     $("video").prop('muted', false); //unmute
   });
+
+  window.addEventListener('touchstart', function() {
+  // the user touched the screen!
+   $("video").prop('muted', false); //unmute
+});
 </script>
 
 </body>
