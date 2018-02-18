@@ -59,7 +59,6 @@
 		 <video playsinline loop muted autoplay>
 			  <source src="images/alexa_y_rodolfo.mp4" type="video/mp4">
 		</video> 
-	    <button id="unmuteButton"></button>
 		</div>
 			 <!-- <embed type="video/mp4" src="images/Secuencia 02_1.mp4" width="640" height="480">  -->
 			<!-- <header>
@@ -331,7 +330,7 @@
 	<script src="assets/js/firebase.js"></script>
 
 	<script>
-  unmuteButton.addEventListener('click', function() {
+  document.body.addEventListener('click', function() {
     video.muted = false;
   });
 </script>
